@@ -1,2 +1,12 @@
 # github-actions
 Explore github action features
+
+
+Command:
+PS D:\01_Study-And-Achievements\00_GithubAction\Hands-on\first-workflow> git init     
+ git add -A
+ git commit -m "First Commit"
+ git branch -M main 
+ git remote add origin git@github.com:mlops-artifacts-rajeshmoyra/github-actions.git
+ git push origin main  
+
