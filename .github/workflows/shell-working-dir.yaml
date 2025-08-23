@@ -1,6 +1,7 @@
 name: Explore Working Dir and Shells
 on: [push]
-deafults:
+
+defaults:
     run:
         shell: bash
 jobs:
