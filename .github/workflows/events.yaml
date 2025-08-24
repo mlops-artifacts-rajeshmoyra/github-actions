@@ -1,5 +1,10 @@
 name: Repository Events
-on: [push, pull_request, issues]
+on:
+    push:
+    pull_request: 
+        types: [ assigned, opened]
+    issues: 
+        types: [opened]
 
 jobs:
     CheckOut-Test:
