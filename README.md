@@ -1,5 +1,5 @@
 # github-actions
-Explore github action features
+Explore github
 
 **Command:**
 ```console
