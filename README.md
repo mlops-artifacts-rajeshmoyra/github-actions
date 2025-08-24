@@ -3,7 +3,7 @@ Explore github action features
 
 **Command:**
 ```console
- PS D:\01_Study-And-Achievements\00_GithubAction\Hands-on\first-workflow>
+ PS D:\00_GithubAction\Hands-on\first-workflow>
  git init     
  git add -A
  git commit -m "First Commit"
