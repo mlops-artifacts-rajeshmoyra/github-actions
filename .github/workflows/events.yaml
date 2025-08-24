@@ -2,7 +2,7 @@ name: Repository Events
 on: [push, pull_request, issues]
 
 jobs:
-    Check Out Test:
+    CheckOut-Test:
         runs-on: ubuntu-latest
         steps:
             - run: |
