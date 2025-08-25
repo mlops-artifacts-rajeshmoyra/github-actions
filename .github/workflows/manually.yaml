@@ -1,0 +1,39 @@
+name: Manually Trigger
+on:
+    workflow_dispatch: 
+        inputs:
+            string: 
+                description: "String Input Type"
+                type: string
+                required: true
+                default: "Deafult String Value"
+            option:
+                description: "Options Input Type"
+                type: choice
+                required: true
+                default: "Option 3"
+                options:
+                    - Option 1
+                    - Option2
+                    - Option 3
+            boolean:
+                type: boolean
+                default: false
+                description: "Boolean Value"
+                required: false
+            enviroment:
+                default: "Environment"
+                type: environment
+                required: true
+
+jobs:
+    log-info:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo $GITHUB_REF
+            - run: |
+                echo "String Input ${{ inputs.string}}"
+                echo "String Input ${{ inputs.boolean}}"
+                echo "String Input ${{ inputs.option}}"
+                echo "String Input ${{ inputs.enviroment}}"
+

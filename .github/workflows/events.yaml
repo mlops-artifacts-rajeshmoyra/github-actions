@@ -1,8 +1,27 @@
 name: Repository Events
 on:
     push:
+        branches: 
+            - main
+            - "feature/*" # matches feature/featA, feature/B etc but not feature/A/B
+            - "feature/**" # also feature/A/B
+            - "!featue/A"
+        # branches-ignore: 
+        #     - feature/featA
+
+        tags: 
+            - v1.*
+            - "!v1.1.1" # Except
+        paths: 
+            - "**.js"
+            - "!app.js"
     pull_request: 
         types: [ assigned, opened]
+        branches: 
+            - main
+            - "!develop"
+        paths: 
+            - "**.py"
     issues: 
         types: [opened]
 
