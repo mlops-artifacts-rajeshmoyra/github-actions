@@ -31,7 +31,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo $GITHUB_REF
-            - run: |
+            - name: "Print Input Values"
+              run: |
                 echo "String Input ${{ inputs.string}}"
                 echo "String Input ${{ inputs.boolean}}"
                 echo "String Input ${{ inputs.option}}"
