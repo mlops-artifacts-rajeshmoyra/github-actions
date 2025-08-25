@@ -1,0 +1,15 @@
+name: Stale Issues and PRs
+on:
+    schedule: 
+        - corn: "0 14 * * *"
+        - corn: "0/5 * * * *"
+
+jobs:
+    stale:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: action/stale@v8
+              with:
+                stale-issue-message: "Issue Warnig Message"
+                days-before-stale: 1
+                days-before-close: 5
