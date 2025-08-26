@@ -26,4 +26,4 @@ Explore github
 - [workflow_dispatch](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_dispatch)
 - [Schedule Docs](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 - [Expression and Functions](https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#functions)
-- [text](https://)
+- [Environment-Variables](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables#default-environment-variables)

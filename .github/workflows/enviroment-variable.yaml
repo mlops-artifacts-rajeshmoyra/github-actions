@@ -9,8 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         env:
             JOB_LEVEL_VAR: Availbale in all steps in env-var-and-context job
-        # if: $GITHUB_REF == 'res/heads/main' # DO NOT USE THIS
-        if: github.ref == 'res/heads/main'
+        # if: $GITHUB_REF == 'refs/heads/main' # DO NOT USE THIS
+        if: github.ref == 'refs/heads/main'
         steps:
             - name: LOG ENV VAR # Evaluated in Runner machine
               run: echo $GITHUB_REF
