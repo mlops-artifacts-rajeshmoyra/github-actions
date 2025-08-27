@@ -27,3 +27,4 @@ Explore github
 - [Schedule Docs](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 - [Expression and Functions](https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#functions)
 - [Environment-Variables](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables#default-environment-variables)
+- [Encrypt and Decrypt Files](https://gnupg.org/download/)
