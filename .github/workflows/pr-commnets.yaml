@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     # https://docs.github.com/en/actions/tutorials/authenticate-with-github_token#permissions-for-the-github_token
     permissions:
-      pull-requests: read
+      pull-requests: write
               
     steps:
       - name: Comment on New PRs
