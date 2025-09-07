@@ -11,7 +11,7 @@ on:
         default: "14,15,16"
         type: string
 jobs:
-  prepare-matix:
+  prepare-matrix:
     runs-on: ubuntu-latest
     outputs:
       matrix-arrays: ${{ steps.matrix-arrays.outputs.result }}
@@ -32,10 +32,11 @@ jobs:
 
 
   node-matrix:
+    needs: prepare-matrix
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        node-version: [14, 15, 16]
+        os: ${{ fromJson(needs.prepare-matrix.outputs.matrix-arrays).os }}
+        node-version: ${{ fromJson(needs.prepare-matrix.outputs.matrix-arrays).node-version }}
     runs-on: ${{ matrix.os }}
     steps:
       - run: node -v'
