@@ -14,6 +14,12 @@ jobs:
   prepare-matix:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/githun-script@v6
+        id: matrix-arrays
+        with:
+          script: "return {os: context.payload.inputs['os'].split(','), node-version: context.payload.inputs['node-version'].split(',')}"
+          result-encoding: json
+      - run: echo '${{ steps.matrix-arrays.outputs.result }}'
       - run: echo "step-output=value">> $GITHUB_OUTPUT
         id: step-1
       - run: echo "step-output=value 2" >> $GITHUB_OUTPUT
@@ -22,15 +28,16 @@ jobs:
           echo '${{ steps.step-1.output.step-output}}'
           echo '${{ steps.step-2.output.step-output}}'
 
-  # node-matrix:
-  #   strategy:
-  #     matrix:
-  #       os: [ubuntu-latest, windows-latest]
-  #       node-version: [14, 15, 16]
-  #   runs-on: ${{ matrix.os }}
-  #   steps:
-  #     - run: node -v'
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #     - run: node -v
+
+  node-matrix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: [14, 15, 16]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: node -v'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node -v
