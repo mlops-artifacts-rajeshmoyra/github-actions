@@ -9,7 +9,7 @@ on:
         required: false
 jobs:
     calling-reusable-workflow:
-      uses: mlops-artifacts-rajeshmoyra/plaform-scripts/.github/workflows/sample-reusable-wf.yaml@main
+      uses: mlops-artifacts-rajeshmoyra/plaform-scripts/workflows/.github/workflows/reusable.yaml@main
       with:
         name: ${{ inputs.name }}
       secrets: #inherit
