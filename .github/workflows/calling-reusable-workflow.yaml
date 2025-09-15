@@ -8,12 +8,22 @@ on:
         default: Rajesh
         required: false
 jobs:
-    calling-reusable-workflow:
-      uses: mlops-artifacts-rajeshmoyra/plaform-scripts/.github/workflows/reusable.yaml@main
-      with:
-        name: ${{ inputs.name }}
-      secrets: #inherit
-        acess-toen: ${{ secrets.ACCESS_TOKEN }}
+    # calling-reusable-workflow:
+    #   uses: mlops-artifacts-rajeshmoyra/plaform-scripts/.github/workflows/reusable.yaml@main
+    #   with:
+    #     name: ${{ inputs.name }}
+    #   secrets: #inherit
+    #     acess-toen: ${{ secrets.ACCESS_TOKEN }}
+
+    calling-reusable-workflow-same-repo:
+      uses: ./.github/workflows/reusable-workflow.yaml
+
+    using-resuable-workflow-output:
+      runs-on: ubuntu-latest
+      needs: calling-reusable-workflow-same-repo
+      steps:
+        - run: echo ${{ needs.calling-reusable-workflow-same-repo.outputs.date }}
+
         
 
 
